@@ -1,0 +1,9 @@
+## Pages
+- [Builds - Project Tracker | Beige Socks Workshop](/builds): Track active, planned, and completed electronics projects at Beige Socks Workshop.
+- [Maslow NYC Project Tracker | Beige Socks Workshop](/maslow): Track progress on Maslow NYC prototypes and projects.
+- [The Coffee Counter - Silly Stats Dashboard | Beige Socks Workshop](/coffeecounter): Track absurd workshop statistics with incrementable counters.
+- [The Lab - Electronics Calculators | Beige Socks Workshop](/lab): Interactive electronics calculators for resistors, LEDs, PWM, voltage dividers, 555 timers, and wire gauges.
+- [Tools - Tool Library | Beige Socks Workshop](/tools): Essential electronics tools and equipment at Beige Socks Workshop.
+- [Wish List - Shopping Queue | Beige Socks Workshop](/wishlist): Components and parts needed for upcoming projects at Beige Socks Workshop.
+- [Workshop - Component Inventory | Beige Socks Workshop](/workshop): Browse and manage electronics components in Patrick
+- [Zelda Zone - Do Not Touch! | Beige Socks Workshop](/zeldazone): Zelda
