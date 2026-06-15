@@ -14,6 +14,7 @@ function Header() {
     { name: 'Tools', path: '/tools' },
     { name: 'Lab', path: '/lab' },
     { name: 'Maslow', path: '/maslow' },
+    { name: 'Pack', path: '/pack' },
     { name: 'Zelda Zone', path: '/zelda-zone' },
     { name: 'Coffee Counter', path: '/coffee-counter' },
   ];
