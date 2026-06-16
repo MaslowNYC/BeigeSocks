@@ -3,15 +3,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wrench, Hammer, Calculator, FlaskConical, Coffee, ShoppingCart } from 'lucide-react';
+import { Wrench, Hammer, Tent } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 
 function HomePage() {
   const navigationCards = [
     { title: 'Workshop', path: '/workshop', icon: Wrench, description: 'Component inventory' },
-    { title: 'Builds', path: '/builds', icon: Hammer, description: 'Active projects' },
-    { title: 'Tools', path: '/tools', icon: Wrench, description: 'Tool library' },
-    { title: 'Lab', path: '/lab', icon: Calculator, description: 'Electronics calculators' },
+    { title: 'Maslow', path: '/maslow', icon: Hammer, description: 'NYC project tracker' },
+    { title: 'Pack', path: '/pack', icon: Tent, description: 'Camp loadout builder' },
   ];
 
   const recentActivity = [
@@ -51,10 +50,10 @@ function HomePage() {
                 Browse Workshop
               </Link>
               <Link
-                to="/builds"
+                to="/pack"
                 className="border-2 border-[#8B9E7D] text-[#8B9E7D] px-6 py-3 rounded-lg font-semibold hover:bg-[#8B9E7D] hover:text-white transition-colors"
               >
-                View Builds
+                Explore Pack
               </Link>
             </div>
           </motion.div>

@@ -10,13 +10,8 @@ function Header() {
 
   const navLinks = [
     { name: 'Workshop', path: '/workshop' },
-    { name: 'Builds', path: '/builds' },
-    { name: 'Tools', path: '/tools' },
-    { name: 'Lab', path: '/lab' },
     { name: 'Maslow', path: '/maslow' },
     { name: 'Pack', path: '/pack' },
-    { name: 'Zelda Zone', path: '/zelda-zone' },
-    { name: 'Coffee Counter', path: '/coffee-counter' },
   ];
 
   const isActive = (path) => location.pathname === path;
