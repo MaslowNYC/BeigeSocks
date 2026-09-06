@@ -4,6 +4,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import MainLayout from '@/layouts/MainLayout';
 import HomePage from '@/pages/HomePage';
 import PackPage from '@/pages/PackPage';
+import PackTripPage from '@/pages/PackTripPage';
 import { Toaster } from '@/components/ui/toaster';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route element={<MainLayout />}>
           <Route path='pack' element={<PackPage />} />
+          <Route path='pack/:token' element={<PackTripPage />} />
         </Route>
       </Routes>
       <Toaster />
