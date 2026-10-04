@@ -82,13 +82,13 @@ function WorkbenchSpacePage() {
   };
 
   if (status === 'loading') {
-    return <div className="flex items-center gap-2 text-[#5C6A5E]"><Loader2 className="w-4 h-4 animate-spin" /> Opening the workbench…</div>;
+    return <div className="flex items-center gap-2 text-[#6F655A]"><Loader2 className="w-4 h-4 animate-spin" /> Opening the workbench…</div>;
   }
   if (status === 'missing') {
     return (
       <div className="surface-elevated p-6 max-w-lg">
         <h1 className="text-xl font-bold mb-2">No workbench with that code</h1>
-        <p className="text-[#5C6A5E] mb-4">Check the link, or open a different one.</p>
+        <p className="text-[#6F655A] mb-4">Check the link, or open a different one.</p>
         <Link to="/workbench"><Button variant="outline">Back</Button></Link>
       </div>
     );
@@ -97,7 +97,7 @@ function WorkbenchSpacePage() {
     return (
       <div className="surface-elevated p-6 max-w-lg flex gap-3">
         <AlertCircle className="w-5 h-5 text-[#A0522D] shrink-0 mt-0.5" />
-        <div><h1 className="font-bold mb-1">Could not load it</h1><p className="text-[#5C6A5E]">{error}</p></div>
+        <div><h1 className="font-bold mb-1">Could not load it</h1><p className="text-[#6F655A]">{error}</p></div>
       </div>
     );
   }
@@ -111,10 +111,10 @@ function WorkbenchSpacePage() {
 
       <div className="flex items-end justify-between gap-4 flex-wrap mb-6">
         <div>
-          <p className="text-xs tracking-widest uppercase text-[#8B9E7D] font-semibold">Beigesocks</p>
+          <p className="text-xs tracking-widest uppercase text-[#D8401F] font-semibold">Beigesocks</p>
           <h1 className="text-3xl font-bold">{space.workspace.name}</h1>
         </div>
-        <label className="flex items-center gap-2 text-sm text-[#5C6A5E] bg-white border border-[#D4D8D0] rounded-full px-3 py-1.5">
+        <label className="flex items-center gap-2 text-sm text-[#6F655A] bg-[#FFFBF3] border border-[#E2D7C3] rounded-full px-3 py-1.5">
           <input
             type="checkbox"
             checked={kid}
@@ -126,7 +126,7 @@ function WorkbenchSpacePage() {
 
       {error && <p className="text-sm text-[#A0522D] mb-4">{error}</p>}
 
-      <nav className="flex gap-1 border-b border-[#D4D8D0] mb-6">
+      <nav className="flex gap-1 border-b border-[#E2D7C3] mb-6">
         {TABS.map((t) => {
           const Icon = t.icon;
           const n = t.id === 'projects' ? space.projects.length
@@ -138,11 +138,11 @@ function WorkbenchSpacePage() {
               key={t.id}
               onClick={() => { setTab(t.id); setOpenId(null); }}
               className={`flex items-center gap-2 px-4 py-2 -mb-px border-b-2 font-semibold text-sm ${
-                on ? 'border-[#6B8560] text-[#2C3E2E]' : 'border-transparent text-[#5C6A5E]'
+                on ? 'border-[#B3321A] text-[#2A2420]' : 'border-transparent text-[#6F655A]'
               }`}
             >
               <Icon className="w-4 h-4" />{t.label}
-              <span className="text-xs tabular-nums text-[#8B9E7D]">{n}</span>
+              <span className="text-xs tabular-nums text-[#D8401F]">{n}</span>
             </button>
           );
         })}
@@ -195,12 +195,12 @@ function Projects({ space, lineState, onOpen, onNew }) {
   return (
     <>
       <div className="flex items-center justify-between gap-4 mb-4">
-        <p className="text-[#5C6A5E] text-sm">Start with the idea. Parts come later.</p>
+        <p className="text-[#6F655A] text-sm">Start with the idea. Parts come later.</p>
         <Button onClick={onNew}><Plus className="w-4 h-4 mr-1" /> New project</Button>
       </div>
 
       {space.projects.length === 0 ? (
-        <div className="surface-elevated p-8 text-center text-[#5C6A5E]">
+        <div className="surface-elevated p-8 text-center text-[#6F655A]">
           Nothing yet. A project starts as a sentence about what you want to make.
         </div>
       ) : (
@@ -213,23 +213,23 @@ function Projects({ space, lineState, onOpen, onNew }) {
               <button
                 key={p.id}
                 onClick={() => onOpen(p.id)}
-                className="surface-elevated p-4 text-left flex flex-col gap-2 hover:border-[#8B9E7D]"
+                className="band-card p-4 pt-6 text-left flex flex-col gap-2"
               >
                 <Badge variant="secondary" className="self-start">{statusLabel(p.status)}</Badge>
                 <h3 className="font-bold text-lg">{p.title || 'Untitled'}</h3>
-                {p.owner && <span className="text-sm text-[#5C6A5E]">{p.owner}</span>}
+                {p.owner && <span className="text-sm text-[#6F655A]">{p.owner}</span>}
                 {lines.length > 0 ? (
                   <>
-                    <span className="flex h-1.5 rounded overflow-hidden bg-[#E7E9E3]">
-                      <i style={{ flex: have }} className="bg-[#6B8560]" />
+                    <span className="flex h-1.5 rounded overflow-hidden bg-[#EEE4D2]">
+                      <i style={{ flex: have }} className="bg-[#3F8F4F]" />
                       <i style={{ flex: short }} className="bg-[#C8902A]" />
                     </span>
-                    <span className="text-xs text-[#5C6A5E] tabular-nums">
+                    <span className="text-xs text-[#6F655A] tabular-nums">
                       {have} of {lines.length} lines covered
                     </span>
                   </>
                 ) : (
-                  <span className="text-xs text-[#5C6A5E]">no parts listed yet</span>
+                  <span className="text-xs text-[#6F655A]">no parts listed yet</span>
                 )}
               </button>
             );
@@ -253,7 +253,7 @@ function ProjectDetail({ project, space, kid, lineState, onBack, onPatch, onAddL
 
   return (
     <div>
-      <button onClick={onBack} className="text-sm text-[#5C6A5E] font-semibold mb-3 flex items-center gap-1">
+      <button onClick={onBack} className="text-sm text-[#6F655A] font-semibold mb-3 flex items-center gap-1">
         <ArrowLeft className="w-4 h-4" /> All projects
       </button>
 
@@ -262,19 +262,19 @@ function ProjectDetail({ project, space, kid, lineState, onBack, onPatch, onAddL
           value={project.title || ''}
           onChange={(e) => onPatch({ title: e.target.value })}
           placeholder="What are we making?"
-          className="flex-1 min-w-[200px] text-2xl font-bold bg-transparent border-b border-transparent hover:border-[#D4D8D0] focus:border-[#6B8560] focus:outline-none py-1"
+          className="flex-1 min-w-[200px] text-2xl font-bold bg-transparent border-b border-transparent hover:border-[#E2D7C3] focus:border-[#B3321A] focus:outline-none py-1"
         />
         <select
           value={project.status}
           onChange={(e) => onPatch({ status: e.target.value })}
-          className="bg-white border border-[#D4D8D0] rounded-lg px-3 py-2 text-sm font-semibold"
+          className="bg-[#FFFBF3] border border-[#E2D7C3] rounded-lg px-3 py-2 text-sm font-semibold"
         >
           {STATUSES.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
         </select>
       </div>
 
       <h2 className="font-bold mb-1">Thinking it through</h2>
-      <p className="text-sm text-[#5C6A5E] mb-2">
+      <p className="text-sm text-[#6F655A] mb-2">
         How it should work, what you are unsure about, what you tried.
       </p>
       <textarea
@@ -282,21 +282,21 @@ function ProjectDetail({ project, space, kid, lineState, onBack, onPatch, onAddL
         onChange={(e) => setNotes(e.target.value)}
         onBlur={() => { if (notes !== project.notes) onPatch({ notes }); }}
         placeholder="It should do this. I think we need a way to…"
-        className="w-full min-h-[160px] surface-elevated p-4 leading-relaxed focus:outline-none focus:border-[#6B8560]"
+        className="w-full min-h-[160px] surface-elevated p-4 leading-relaxed focus:outline-none focus:border-[#B3321A]"
       />
 
       <div className="flex items-center justify-between gap-4 mt-8 mb-2">
         <div>
           <h2 className="font-bold">Parts it needs</h2>
-          <p className="text-sm text-[#5C6A5E]">
+          <p className="text-sm text-[#6F655A]">
             Write what you need even if you have no idea what it is called.
           </p>
         </div>
         <Button variant="outline" onClick={onAddLine}><Plus className="w-4 h-4 mr-1" /> Add line</Button>
       </div>
 
-      <div className="surface-elevated divide-y divide-[#E7E9E3]">
-        {lines.length === 0 && <p className="p-4 text-sm text-[#5C6A5E]">No parts listed yet.</p>}
+      <div className="surface-elevated divide-y divide-[#EEE4D2]">
+        {lines.length === 0 && <p className="p-4 text-sm text-[#6F655A]">No parts listed yet.</p>}
         {lines.map((l) => {
           const st = lineState(l, project.id);
           return (
@@ -306,18 +306,18 @@ function ProjectDetail({ project, space, kid, lineState, onBack, onPatch, onAddL
                 min="0"
                 value={l.qty}
                 onChange={(e) => onPatchLine(l.id, { qty: parseInt(e.target.value, 10) || 0 })}
-                className="w-14 text-center tabular-nums bg-transparent border border-transparent hover:border-[#D4D8D0] focus:border-[#6B8560] rounded px-1 py-1 focus:outline-none"
+                className="w-14 text-center tabular-nums bg-transparent border border-transparent hover:border-[#E2D7C3] focus:border-[#B3321A] rounded px-1 py-1 focus:outline-none"
               />
               <input
                 value={l.want}
                 onChange={(e) => onPatchLine(l.id, { want: e.target.value })}
                 placeholder="a thing that spins the wheel"
-                className="flex-1 font-medium bg-transparent border border-transparent hover:border-[#D4D8D0] focus:border-[#6B8560] rounded px-2 py-1 focus:outline-none"
+                className="flex-1 font-medium bg-transparent border border-transparent hover:border-[#E2D7C3] focus:border-[#B3321A] rounded px-2 py-1 focus:outline-none"
               />
               <select
                 value={l.part_id || ''}
                 onChange={(e) => onPatchLine(l.id, { part_id: e.target.value || null })}
-                className="bg-transparent border border-transparent hover:border-[#D4D8D0] focus:border-[#6B8560] rounded px-2 py-1 text-sm max-w-[150px]"
+                className="bg-transparent border border-transparent hover:border-[#E2D7C3] focus:border-[#B3321A] rounded px-2 py-1 text-sm max-w-[150px]"
               >
                 <option value="">not linked</option>
                 {space.parts.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
@@ -329,7 +329,7 @@ function ProjectDetail({ project, space, kid, lineState, onBack, onPatch, onAddL
                   {st.code === 'unknown' && <Badge variant="secondary">not linked</Badge>}
                 </span>
               )}
-              <button onClick={() => onDeleteLine(l.id)} className="text-[#8B9E7D] hover:text-[#A0522D] p-1" aria-label="Remove line">
+              <button onClick={() => onDeleteLine(l.id)} className="text-[#D8401F] hover:text-[#A0522D] p-1" aria-label="Remove line">
                 <Trash2 className="w-4 h-4" />
               </button>
             </div>
@@ -361,14 +361,14 @@ function Parts({ space, kid, committed, onAdd, onBump, onDelete }) {
 
   return (
     <>
-      <p className="text-sm text-[#5C6A5E] mb-4">What you actually have, and roughly where it is.</p>
+      <p className="text-sm text-[#6F655A] mb-4">What you actually have, and roughly where it is.</p>
 
       <form onSubmit={submit} className="surface-elevated p-4 grid gap-2 sm:grid-cols-[2fr_1fr_70px_1fr_auto] mb-4">
         <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="6 yellow LEDs, 5mm" />
         <select
           value={cat}
           onChange={(e) => setCat(e.target.value)}
-          className="bg-[#F5F5F0] border border-[#D4D8D0] rounded-lg px-3 py-2 text-sm"
+          className="bg-[#F6F1E7] border border-[#E2D7C3] rounded-lg px-3 py-2 text-sm"
         >
           {CATEGORIES.map((c) => <option key={c.id} value={c.id}>{c.label}</option>)}
         </select>
@@ -378,11 +378,11 @@ function Parts({ space, kid, committed, onAdd, onBump, onDelete }) {
       </form>
 
       {space.parts.length === 0 ? (
-        <div className="surface-elevated p-8 text-center text-[#5C6A5E]">
+        <div className="surface-elevated p-8 text-center text-[#6F655A]">
           Empty. Start with the salvage bin, then count what is actually in it.
         </div>
       ) : (
-        <div className="surface-elevated divide-y divide-[#E7E9E3]">
+        <div className="surface-elevated divide-y divide-[#EEE4D2]">
           {space.parts.map((p) => {
             const c = categoryOf(p.category);
             const spoken = committed(p.id, null);
@@ -393,20 +393,20 @@ function Parts({ space, kid, committed, onAdd, onBump, onDelete }) {
                   <span className="font-semibold">{p.name}</span>
                   {spoken > 0 && <Badge className="ml-2 bg-[#F7ECD2] text-[#8A6206]">{spoken} spoken for</Badge>}
                   {!kid && p.part_number && (
-                    <span className="block text-xs text-[#5C6A5E] font-mono">{p.part_number}</span>
+                    <span className="block text-xs text-[#6F655A] font-mono">{p.part_number}</span>
                   )}
                 </span>
-                {!kid && <span className="text-xs text-[#5C6A5E] w-28 truncate">{p.bin}</span>}
+                {!kid && <span className="text-xs text-[#6F655A] w-28 truncate">{p.bin}</span>}
                 <span className="flex items-center gap-1">
-                  <button onClick={() => onBump(p, -1)} className="w-7 h-7 border border-[#D4D8D0] rounded" aria-label="One fewer">
+                  <button onClick={() => onBump(p, -1)} className="w-7 h-7 border border-[#E2D7C3] rounded" aria-label="One fewer">
                     <Minus className="w-3 h-3 mx-auto" />
                   </button>
                   <span className="w-8 text-center tabular-nums font-medium">{p.qty}</span>
-                  <button onClick={() => onBump(p, 1)} className="w-7 h-7 border border-[#D4D8D0] rounded" aria-label="One more">
+                  <button onClick={() => onBump(p, 1)} className="w-7 h-7 border border-[#E2D7C3] rounded" aria-label="One more">
                     <Plus className="w-3 h-3 mx-auto" />
                   </button>
                 </span>
-                <button onClick={() => onDelete(p.id)} className="text-[#8B9E7D] hover:text-[#A0522D] p-1" aria-label="Remove part">
+                <button onClick={() => onDelete(p.id)} className="text-[#D8401F] hover:text-[#A0522D] p-1" aria-label="Remove part">
                   <Trash2 className="w-4 h-4" />
                 </button>
               </div>
@@ -423,7 +423,7 @@ function Parts({ space, kid, committed, onAdd, onBump, onDelete }) {
 function OrderList({ rows }) {
   if (!rows.length) {
     return (
-      <div className="surface-elevated p-8 text-center text-[#5C6A5E]">
+      <div className="surface-elevated p-8 text-center text-[#6F655A]">
         Nothing to order. Either you have everything, or no project has moved past
         “working it out” yet.
       </div>
@@ -431,11 +431,11 @@ function OrderList({ rows }) {
   }
   return (
     <>
-      <p className="text-sm text-[#5C6A5E] mb-4">
+      <p className="text-sm text-[#6F655A] mb-4">
         Every project that is gathering or building, minus what is in the bins.
       </p>
-      <div className="surface-elevated divide-y divide-[#E7E9E3]">
-        <div className="grid grid-cols-[1fr_70px_70px_70px] gap-3 p-3 text-xs uppercase tracking-wider text-[#5C6A5E] font-semibold">
+      <div className="surface-elevated divide-y divide-[#EEE4D2]">
+        <div className="grid grid-cols-[1fr_70px_70px_70px] gap-3 p-3 text-xs uppercase tracking-wider text-[#6F655A] font-semibold">
           <span>Part</span><span className="text-right">Need</span>
           <span className="text-right">Have</span><span className="text-right">Order</span>
         </div>
@@ -445,7 +445,7 @@ function OrderList({ rows }) {
               <span className="font-semibold">{r.name}</span>
               {r.unlinked && <Badge variant="secondary" className="ml-2">not in inventory</Badge>}
               {r.for_projects?.length > 0 && (
-                <span className="block text-xs text-[#5C6A5E]">for {r.for_projects.join(', ')}</span>
+                <span className="block text-xs text-[#6F655A]">for {r.for_projects.join(', ')}</span>
               )}
             </span>
             <span className="text-right tabular-nums">{r.needed}</span>

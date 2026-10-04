@@ -9,8 +9,8 @@ const TILES = [
   {
     src: '/Pigeon.JPG',
     alt: 'Pigeon with a sweatband and a basketball',
-    to: '/pack',
-    label: 'Open the Pack',
+    to: '/trips',
+    label: 'Trips',
   },
 ];
 
@@ -19,10 +19,10 @@ function HomePage() {
     <>
       <Helmet>
         <title>BeigeSocks</title>
-        <meta name="description" content="Socks, snails, and a pigeon who plays ball." />
+        <meta name="description" content="Socks, a snail, and a pigeon who plays ball." />
       </Helmet>
 
-      <div className="h-[100dvh] w-screen bg-[#F5F5F0] p-4 sm:p-6">
+      <div className="h-[100dvh] w-screen bg-[#F6F1E7] p-4 sm:p-6">
         <div className="grid h-full w-full grid-cols-2 grid-rows-2 gap-4 sm:gap-6">
           {TILES.map((tile) => {
             const image = (
@@ -39,10 +39,11 @@ function HomePage() {
                   key={tile.src}
                   to={tile.to}
                   aria-label={tile.label}
-                  className="group relative block overflow-hidden rounded-2xl border border-[#D4D8D0] shadow-sm transition-shadow hover:shadow-lg"
+                  className="group relative block overflow-hidden rounded-2xl border border-[#E2D7C3] shadow-sm transition-shadow hover:shadow-lg"
                 >
                   {image}
-                  <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-[#2C3E2E]/85 px-4 py-1.5 text-sm font-semibold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="sweatband absolute inset-x-0 top-0 h-2.5" aria-hidden="true" />
+                  <span className="band-pill absolute bottom-3 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-1">
                     {tile.label}
                   </span>
                 </Link>
@@ -52,7 +53,7 @@ function HomePage() {
             return (
               <div
                 key={tile.src}
-                className="group overflow-hidden rounded-2xl border border-[#D4D8D0] shadow-sm"
+                className="group overflow-hidden rounded-2xl border border-[#E2D7C3] shadow-sm"
               >
                 {image}
               </div>

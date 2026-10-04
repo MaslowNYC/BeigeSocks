@@ -16,14 +16,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        'beige-socks': '#D2B48C',
-        'bg-primary': '#F5F5F0',
-        'bg-card': '#FFFFFF',
-        'text-primary': '#2C3E2E',
-        'text-secondary': '#6B7C6B',
-        'accent': '#8B9E7D',
-        'accent-hover': '#6B8560',
-        'border-sage': '#D4D8D0',
+        // BeigeSocks palette. See STYLE.md.
+        paper: '#F6F1E7',
+        sock: '#EEE4D2',
+        cream: '#FFFBF3',
+        band: { DEFAULT: '#D8401F', dark: '#B3321A' },
+        ink: { DEFAULT: '#2A2420', soft: '#6F655A' },
+        line: '#E2D7C3',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

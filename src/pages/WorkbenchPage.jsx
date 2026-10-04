@@ -31,17 +31,17 @@ function WorkbenchPage() {
 
       <div className="max-w-xl">
         <div className="flex items-center gap-3 mb-2">
-          <Wrench className="w-6 h-6 text-[#8B9E7D]" />
+          <Wrench className="w-6 h-6 text-[#D8401F]" />
           <h1 className="text-3xl font-bold">Workbench</h1>
         </div>
-        <p className="text-[#5C6A5E] mb-8">
+        <p className="text-[#6F655A] mb-8">
           Write up a project, list what it needs, and see what you already have
           against what you have to order.
         </p>
 
         <form
           onSubmit={(e) => { e.preventDefault(); open(token); }}
-          className="surface-elevated p-5 flex flex-col gap-3"
+          className="band-card p-5 pt-7 flex flex-col gap-3"
         >
           <label htmlFor="wb-token" className="text-sm font-semibold">
             Workbench code
@@ -63,7 +63,7 @@ function WorkbenchPage() {
             <button
               type="button"
               onClick={() => open(last)}
-              className="text-sm text-[#6B8560] underline self-start"
+              className="text-sm text-[#B3321A] underline self-start"
             >
               Open the one you used last time
             </button>
