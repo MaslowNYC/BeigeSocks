@@ -1,12 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
+import { SUPABASE_URL, SUPABASE_KEY } from '@/lib/supabaseConfig';
 
 // Trips: one base list that goes on every trip, plus places that each keep a
 // standing list of their own. Same access idea as Workbench: a secret token in
 // the URL, sent as a header, checked by row level security in the database.
 // Tables live in `public` with a travel_ prefix.
 
-const url = import.meta.env.VITE_SUPABASE_URL;
-const key = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const url = SUPABASE_URL;
+const key = SUPABASE_KEY;
 
 export const isConfigured = Boolean(url && key);
 
